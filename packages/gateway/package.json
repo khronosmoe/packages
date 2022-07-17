@@ -4,8 +4,8 @@
   "private": false,
   "license": "MIT",
   "version": "1.7.0",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
   "repository": "https://github.com/surgioproject/packages/tree/master/packages/gateway",
   "author": "Yihang Li <me@royli.dev>",
   "bugs": {
@@ -53,7 +53,8 @@
     "semver": "^7.3.2",
     "serverless-http": "^2.7.0",
     "source-map-support": "^0.5.19",
-    "youch": "^2.0.10"
+    "youch": "^2.0.10",
+    "yenv": "^3.0.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.1.2",
