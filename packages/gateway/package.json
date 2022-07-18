@@ -1,15 +1,15 @@
 {
-  "name": "@surgio/gateway",
-  "description": "Surgio API Gateway 面板",
+  "name": "@khronosmoe/gateway",
+  "description": "Modified Surgio API Gateway",
   "private": false,
   "license": "MIT",
-  "version": "1.7.0",
+  "version": "1.7.2",
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
-  "repository": "https://github.com/surgioproject/packages/tree/master/packages/gateway",
+  "repository": "https://github.com/khronosmoe/packages/tree/master/packages/gateway",
   "author": "Yihang Li <me@royli.dev>",
   "bugs": {
-    "url": "https://github.com/surgioproject/packages/issues"
+    "url": "https://github.com/khronosmoe/packages/issues"
   },
   "homepage": "https://surgio.royli.dev",
   "scripts": {

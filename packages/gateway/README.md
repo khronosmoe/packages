@@ -1,26 +1,30 @@
-<p align="center">
-    <a href="https://surgio.royli.dev/" target="_blank">
-        <img width="180" src="https://raw.githubusercontent.com/geekdada/surgio/master/docs/.vuepress/public/surgio-icon.png" alt="logo">
-    </a>
-</p>
+# Surgio Gateway
 
-<h2 align="center">Gateway</h2>
+This is a modified version of gateway with support for TLS.
+By default gateway listens on `http` port `3000`. 
+TLS is turned on *only* when there is a file `tls.yaml`. 
 
-[![NPM version][npm-image]][npm-url]
-[![Known Vulnerabilities][snyk-image]][snyk-url]
-[![npm download][download-image]][download-url]
+```bash
+npm init surgio-store surgio
+cd surgio
+npm i @khronosmoe/gateway
+npm i @surgio/gateway-frontend
+```
 
-[npm-image]: https://img.shields.io/npm/v/@surgio/gateway.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/@surgio/gateway
-[snyk-image]: https://snyk.io/test/npm/@surgio/gateway/badge.svg?style=flat-square
-[snyk-url]: https://snyk.io/test/npm/@surgio/gateway
-[download-image]: https://img.shields.io/npm/dm/@surgio/gateway.svg?style=flat-square
-[download-url]: https://npmjs.org/package/@surgio/gateway
+Edit `tls.yaml`
+```bash
+tls_server_config:
+  cert_file: server.crt
+  key_file: server.key
+```
 
-## 文档
+Edit `gateway.js`
+```js
+const gateway = require('@khronosmoe/gateway')
 
-查看完整使用文档，前往 [surgio.royli.dev](https://surgio.royli.dev)。
+;(async () => {
+   const app = await gateway.bootstrap()
+})()
+```
 
-## 交流
-
-[<img width="207" src="https://raw.githubusercontent.com/geekdada/surgio/master/docs/.vuepress/public/join-telegram.png">](https://t.me/surgiotg)
+Default https port is `3001`.
