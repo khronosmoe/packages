@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push: 
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions: 
+      contents: read
+      packages: write
+      
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@khronosmoe'
+
+      - uses: pnpm/action-setup@v2.2.2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install
+          
+      - name: Build
+        run: pnpm --filter "@khronosmoe/gateway" build
+
+      - name: Publish
+        run: pnpm --filter "@khronosmoe/gateway" publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
